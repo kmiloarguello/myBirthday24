@@ -14,20 +14,19 @@
 <body>
 
   <main id="Birthday">
-    <section id="pre-loading" class="frame hidden">
+    <section id="pre-loading" class="frame visible">
       <div class="container">
         <div class="row">
 
           <div class="valign-div valign-wrapper">
-            <h5 class="valign center">Loading...</h5>
-            <button class="boton" onClick="game.setFrameVisible('escenario'); game.setFrameHidden('pre-loading');">Click</button>
+            <h1 class="heading valign center">Loading ... </h1>
           </div>
 
         </div>
       </div>
     </section>
 
-    <section id="escenario" class="frame visible">
+    <section id="escenario" class="frame hidden">
 
       <?xml version="1.0" encoding="utf-8"?>
       <svg  id="objetos" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -978,10 +977,10 @@
           <div class="valign-div valign-wrapper">
             <div class="align-center">
 
-                <h1 class="heading">Brainymo</h1>
-                <p class="desc">Frontend Arsenal Memory Game</p>
+                <h1 class="heading">First Game</h1>
+                <p class="desc">Your mission is to know all my favorite musicians</p>
 
-                <button class="btn" id="btn-start">
+                <button class="boton" id="btn-start">
                     Start
                 </button>
 
@@ -989,7 +988,7 @@
                     <div class="flip-container hide" id="card-template">
                         <div class="flipper">
                             <div class="front">
-                                <label>frontend technologies</label>
+                                <label>Mussician</label>
                             </div>
                             <div class="back">
                                 <label></label>

@@ -3,6 +3,7 @@ window.addEventListener("load", function (){
   game = new Juego(document.getElementById("Birthday"));
 },false);
 
+
 function Juego(gameDiv){
   var frames = [];
   var framesNames = [];
@@ -35,6 +36,10 @@ function Juego(gameDiv){
       "setFrameHidden": setFrameHidden
   };
 }
+
+setTimeout(function(){
+  cambioSection('pre-loading','escenario')
+},2000);
 
 function cambioSection(entrada,salida){
   var myDiv = document.getElementById('cambio-section');
