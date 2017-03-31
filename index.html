@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="shortcut icon" href="svg/icon_birthday.ico" type="image/x-icon" />
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Abel|Lobster" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
   <link rel="stylesheet" href="css/index.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +20,7 @@
 
           <div class="valign-div valign-wrapper">
             <h5 class="valign center">Loading...</h5>
-            <button class="btn" onClick="game.setFrameVisible('escenario'); game.setFrameHidden('pre-loading');">Click</button>
+            <button class="boton" onClick="game.setFrameVisible('escenario'); game.setFrameHidden('pre-loading');">Click</button>
           </div>
 
         </div>
@@ -28,7 +30,6 @@
     <section id="escenario" class="frame visible">
 
       <?xml version="1.0" encoding="utf-8"?>
-      <!-- Generator: Adobe Illustrator 21.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
       <svg  id="objetos" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
       <g id="sillas">
@@ -631,7 +632,7 @@
       		</g>
       	</g>
       </g>
-      <g id="pastel" onClick="game.setFrameVisible('pre-loading'); game.setFrameHidden('escenario');">
+      <g id="pastel" onClick="cambioSection('escenario','gameOne')">
       	<g>
       		<g id="Grupo_1_1_">
       			<g>
@@ -892,7 +893,6 @@
       <div id="confetti"></div>
 
       <?xml version="1.0" encoding="utf-8"?>
-      <!-- Generator: Adobe Illustrator 21.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
       <style type="text/css">
@@ -1031,6 +1031,10 @@
     </section>
 
   </main>
+
+  <div id="cambio-section">
+    <span id="timer"></span>
+  </div>
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>

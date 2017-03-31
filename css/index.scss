@@ -80,7 +80,6 @@ $bgPattern: "https://www.transparenttextures.com/patterns/inspiration-geometry.p
 /* General */
 
 body {
-	overflow: hidden;;
     background-color: $white;
     background-image: url($bgPattern);
     font-family: $abel;
@@ -192,7 +191,7 @@ p.desc {
 			@include animation('move-the-object 35s');
 		}
 		#bomba_x5F_roja, #bomba_x5F_rojo{
-			@include animation('move-the-object 50s');
+			@include animation('move-the-object 30s');
 		}
 		#bomba_x5F_purple{
 			@include animation('move-the-object 60s');
@@ -213,7 +212,16 @@ p.desc {
 }
 
 
-
+#cambio-section{
+	display: none;
+	height: 100%;
+	width: 100%;
+	background-color: red;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 100;
+}
 
 /* Cards */
 
@@ -294,8 +302,6 @@ p.desc {
     }
 }
 
-
-
 /* Timer */
 
 .timer {
@@ -317,10 +323,9 @@ p.desc {
     }
 }
 
-
 /* Buttons */
 
-.btn {
+.boton {
     display: inline-block;
     background-color: $yellow;
     padding: 15px 40px;

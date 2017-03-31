@@ -36,6 +36,26 @@ function Juego(gameDiv){
   };
 }
 
+function cambioSection(entrada,salida){
+  var myDiv = document.getElementById('cambio-section');
+  myDiv.style.display = 'block';
+
+  var count = 2;
+  var contador = setInterval(timer,1000);
+
+  function timer(){
+    count-=1;
+    if(count <= 0){
+      clearInterval(contador);
+      myDiv.style.display = 'none';
+      return;
+    }
+  }
+
+  game.setFrameHidden(entrada);
+  game.setFrameVisible(salida);
+}
+
 var BRAINYMO = BRAINYMO || {};
 
 BRAINYMO.Game = (function() {
@@ -762,4 +782,4 @@ $(function() {
         $(window).resize(function() {
             confetti.resize();
         });
-    });    
+    });

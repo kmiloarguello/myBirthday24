@@ -35,7 +35,6 @@
 
 /* General */
 body {
-  overflow: hidden;
   background-color: #FFFFEA;
   background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
   font-family: "Abel", sans-serif;
@@ -201,10 +200,10 @@ p.desc {
     -o-animation: move-the-object 35s;
     animation: move-the-object 35s; }
   #escenario #objetos #bomba_x5F_roja, #escenario #objetos #bomba_x5F_rojo {
-    -webkit-animation: move-the-object 50s;
-    -moz-animation: move-the-object 50s;
-    -o-animation: move-the-object 50s;
-    animation: move-the-object 50s; }
+    -webkit-animation: move-the-object 30s;
+    -moz-animation: move-the-object 30s;
+    -o-animation: move-the-object 30s;
+    animation: move-the-object 30s; }
   #escenario #objetos #bomba_x5F_purple {
     -webkit-animation: move-the-object 60s;
     -moz-animation: move-the-object 60s;
@@ -222,6 +221,16 @@ p.desc {
   top: 0px;
   width: 100%;
   z-index: 1; }
+
+#cambio-section {
+  display: none;
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100; }
 
 /* Cards */
 .cards-container {
@@ -314,7 +323,7 @@ p.desc {
     font-size: 13px; }
 
 /* Buttons */
-.btn {
+.boton {
   display: inline-block;
   background-color: #FFED66;
   padding: 15px 40px;
@@ -328,14 +337,14 @@ p.desc {
   box-shadow: 0 3px 0 #FF5E5B;
   cursor: pointer;
   transition: all 100ms linear; }
-  .btn:hover {
+  .boton:hover {
     -moz-transform: translateY(-4px);
     -o-transform: translateY(-4px);
     -ms-transform: translateY(-4px);
     -webkit-transform: translateY(-4px);
     transform: translateY(-4px);
     box-shadow: 0 7px 0 #FF5E5B; }
-  .btn:focus {
+  .boton:focus {
     outline: 0; }
 
 /* Github ribbon */
