@@ -12,24 +12,98 @@
 <body>
 
   <main id="Birthday">
-    <section id="pre-loading">
+    <section id="pre-loading" class="frame visible">
       <div class="container">
         <div class="row">
 
           <div class="valign-div valign-wrapper">
             <h5 class="valign center">Loading...</h5>
+            <button class="btn" onClick="game.setFrameVisible('escenario'); game.setFrameHidden('pre-loading');">Click</button>
           </div>
 
         </div>
       </div>
     </section>
 
-    <section id="escenario">
-      
+    <section id="escenario" class="frame hidden">
+
+      <div class="container">
+        <div class="row">
+
+          <div class="valign-div valign-wrapper">
+            <h1>Hola estas en escenario</h1>
+            <button class="btn" onClick="game.setFrameVisible('gameOne'); game.setFrameHidden('escenario');">Click</button>
+          </div>
+
+        </div>
+      </div>
     </section>
+
+    <section id="gameOne" class="frame hidden">
+      <div class="container">
+        <div class="row">
+
+          <div class="valign-div valign-wrapper">
+            <h1>Hola estas en Game 1</h1>
+
+            <div class="align-center">
+
+                <h1 class="heading">Brainymo</h1>
+                <p class="desc">Frontend Arsenal Memory Game</p>
+
+                <button class="btn" id="btn-start">
+                    Start
+                </button>
+
+                <div class="cards-container">
+                    <div class="flip-container hide" id="card-template">
+                        <div class="flipper">
+                            <div class="front">
+                                <label>frontend technologies</label>
+                            </div>
+                            <div class="back">
+                                <label></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timer">
+                    <label id="minutes"></label>:
+                    <label id="seconds"></label>
+                    <div class="time">
+                        MY BEST TIME: <span id="bestTime"></span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn" onClick="game.setFrameVisible('escenario'); game.setFrameHidden('gameOne');">Click</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="gameTwo" class="frame hidden">
+      <h1>Hola estas en Game 2</h1>
+    </section>
+
+    <section id="gameThree" class="frame hidden">
+      <h1>Hola estas en Game 3</h1>
+    </section>
+
+    <section id="pastel" class="frame hidden">
+      <h1>Hola estas comiendo pastel</h1>
+    </section>
+
+    <section id="gracias" class="frame hidden">
+      <h1>Gracias</h1>
+    </section>
+
   </main>
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/game.js"></script>
 </body>
 </html>
