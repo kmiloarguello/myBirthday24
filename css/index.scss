@@ -96,7 +96,6 @@ body {
   z-index: -100;
   opacity: 0;
   height: 0;
-  @include myscale(0.2,0.2,0.2);
 }
 .visible{
   @extend .transicion-frame;
@@ -216,11 +215,13 @@ p.desc {
 	display: none;
 	height: 100%;
 	width: 100%;
-	background-color: red;
 	position: absolute;
 	left: 0;
 	top: 0;
 	z-index: 100;
+	svg{
+		height: auto !important;
+	}
 }
 
 /* Cards */

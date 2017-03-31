@@ -48,6 +48,7 @@ function cambioSection(entrada,salida){
     if(count <= 0){
       clearInterval(contador);
       myDiv.style.display = 'none';
+
       return;
     }
   }

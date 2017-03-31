@@ -47,12 +47,7 @@ body {
   right: 0;
   z-index: -100;
   opacity: 0;
-  height: 0;
-  -webkit-transform: scale3d(0.2, 0.2, 0.2);
-  -moz-transform: scale3d(0.2, 0.2, 0.2);
-  -ms-transform: scale3d(0.2, 0.2, 0.2);
-  -o-transform: scale3d(0.2, 0.2, 0.2);
-  transform: scale3d(0.2, 0.2, 0.2); }
+  height: 0; }
 
 .visible {
   z-index: 1;
@@ -226,11 +221,12 @@ p.desc {
   display: none;
   height: 100%;
   width: 100%;
-  background-color: red;
   position: absolute;
   left: 0;
   top: 0;
   z-index: 100; }
+  #cambio-section svg {
+    height: auto !important; }
 
 /* Cards */
 .cards-container {
