@@ -27,7 +27,7 @@
   -o-transition: all ease 1s;
   transition: all ease 1s; }
 
-.transicion, #escenario #objetos #pastel {
+.transicion, #escenario #objetos #pastel, #escenario #objetos #regalos {
   -webkit-transition: all ease .4s;
   -moz-transition: all ease .4s;
   -o-transition: all ease .4s;
@@ -41,6 +41,9 @@ body {
   color: #FF5E5B; }
 
 /* Main page */
+.overflows {
+  overflow: hidden; }
+
 .hidden {
   position: absolute;
   left: 0;
@@ -57,12 +60,29 @@ body {
   font-size: 52px;
   font-family: "Lobster", cursive;
   color: #FF5E5B;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  width: 100%; }
 
 p.desc {
   letter-spacing: 0.5px;
   margin-top: 0;
   margin-bottom: 60px; }
+
+#next-boton {
+  display: none; }
+
+#next-boton-2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+#pre-loading {
+  overflow: hidden; }
+  #pre-loading .valign-div {
+    height: 95vh; }
+
+.carousel {
+  z-index: 100; }
 
 /* SVG escenario */
 #escenario #objetos {
@@ -174,11 +194,11 @@ p.desc {
     fill: #855F81; }
   #escenario #objetos .st52 {
     fill: #EF7E87; }
-  #escenario #objetos #pastel {
+  #escenario #objetos #pastel, #escenario #objetos #regalos {
     cursor: pointer;
     position: relative;
     z-index: 10; }
-    #escenario #objetos #pastel:hover {
+    #escenario #objetos #pastel:hover, #escenario #objetos #regalos:hover {
       -webkit-transform: scale3d(1, 0.98, 1.05);
       -moz-transform: scale3d(1, 0.98, 1.05);
       -ms-transform: scale3d(1, 0.98, 1.05);
@@ -227,6 +247,47 @@ p.desc {
   z-index: 100; }
   #cambio-section svg {
     height: auto !important; }
+
+#gameTwo {
+  text-align: center; }
+  #gameTwo .keys {
+    display: flex;
+    flex: 2;
+    min-height: 15vh;
+    max-height: 17vh;
+    align-items: center;
+    justify-content: center; }
+  #gameTwo .key {
+    display: inline-block;
+    background-color: #FFED66;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    margin-left: 10px;
+    font-family: "Abel", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FF5E5B;
+    box-shadow: 0 3px 0 #FF5E5B;
+    cursor: pointer;
+    transition: all 100ms linear; }
+    #gameTwo .key:hover {
+      -moz-transform: translateY(-4px);
+      -o-transform: translateY(-4px);
+      -ms-transform: translateY(-4px);
+      -webkit-transform: translateY(-4px);
+      transform: translateY(-4px);
+      box-shadow: 0 7px 0 #FF5E5B; }
+    #gameTwo .key:focus {
+      outline: 0; }
+  #gameTwo .playing {
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 10px #ffc600; }
+  #gameTwo kbd {
+    display: block;
+    font-size: 40px; }
 
 /* Cards */
 .cards-container {
@@ -285,10 +346,11 @@ p.desc {
     cursor: pointer;
     display: inline-block;
     font-size: 22px;
-    padding-top: 15px; }
+    margin-top: 50%;
+    color: white; }
 
 .back {
-  background-color: #00CECB;
+  background-color: #FFCC08;
   text-align: center;
   vertical-align: middle;
   display: table-cell;
@@ -299,9 +361,10 @@ p.desc {
   transform: rotateY(180deg); }
   .back label {
     display: block;
+    color: white;
     width: 100%;
     font-size: 24px;
-    margin-top: 10px; }
+    margin-top: 50%; }
 
 /* Timer */
 .timer {

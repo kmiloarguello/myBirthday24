@@ -1,6 +1,7 @@
 var game;
 window.addEventListener("load", function (){
   game = new Juego(document.getElementById("Birthday"));
+  document.body.className += " overflows";
 },false);
 
 
@@ -38,8 +39,22 @@ function Juego(gameDiv){
 }
 
 setTimeout(function(){
-  cambioSection('pre-loading','escenario')
+  cambioSection('pre-loading','escenario');
 },2000);
+
+
+function quitarClase(){
+  $("body").removeClass("overflows");
+}
+// window.onload = toggleAudio;
+function toggleAudio(){
+  var a = document.getElementById("main-audio");
+  a.play();
+}
+function pauseAudio(){
+  var b = document.getElementById("main-audio");
+  b.pause();
+}
 
 function cambioSection(entrada,salida){
   var myDiv = document.getElementById('cambio-section');
@@ -60,6 +75,11 @@ function cambioSection(entrada,salida){
 
   game.setFrameHidden(entrada);
   game.setFrameVisible(salida);
+
+}
+
+function openCarousel(){
+  $('.carousel').carousel({fullWidth: true});
 }
 
 var BRAINYMO = BRAINYMO || {};
@@ -366,67 +386,67 @@ $(function() {
         var brainymo = new BRAINYMO.Game({
             cards: [
                 {
-                    backImg: 'https://s23.postimg.org/gmp35oru3/grunt.jpg',
+                    backImg: 'img/alesso.jpg',
                     connectionID: 1
                 },
                 {
-                    backTxt: 'GRUNT',
+                    backTxt: 'Alesso',
                     connectionID: 1
                 },
                 {
-                    backImg: 'https://s23.postimg.org/4q21yyfaj/react.jpg',
+                    backImg: 'img/axwell-ingrosso.jpg',
                     connectionID: 2
                 },
                 {
-                    backTxt: 'REACT',
+                    backTxt: 'Axwell Λ Ingrosso',
                     connectionID: 2
                 },
                 {
-                    backImg: 'https://s23.postimg.org/raxfi9r6z/gsap.jpg',
+                    backImg: 'img/coldplay.jpg',
                     connectionID: 3
                 },
                 {
-                    backTxt: 'GSAP',
+                    backTxt: 'Coldplay',
                     connectionID: 3
                 },
                 {
-                    backImg: 'https://s23.postimg.org/bmrmxqm7f/ember.jpg',
+                    backImg: 'img/dirtysouth.jpg',
                     connectionID: 4
                 },
                 {
-                    backTxt: 'EMBER',
+                    backTxt: 'Dirty South',
                     connectionID: 4
                 },
                 {
-                    backImg: 'https://s23.postimg.org/o5cts28kr/karma.jpg',
+                    backImg: 'img/drums.jpg',
                     connectionID: 5
                 },
                 {
-                    backTxt: 'KARMA',
+                    backTxt: 'The Drums',
                     connectionID: 5
                 },
                 {
-                    backImg: 'https://s23.postimg.org/ck2nkcn3f/webpack.jpg',
+                    backImg: 'img/madeon.jpg',
                     connectionID: 6
                 },
                 {
-                    backTxt: 'WEBPACK',
+                    backTxt: 'Madeon',
                     connectionID: 6
                 },
                 {
-                    backImg: 'https://s23.postimg.org/prxfzjv8r/angular.jpg',
+                    backImg: 'img/porter.png',
                     connectionID: 7
                 },
                 {
-                    backTxt: 'ANGULAR',
+                    backTxt: 'Porter Robinson',
                     connectionID: 7
                 },
                 {
-                    backImg: 'https://s23.postimg.org/oje5rnsob/mongo.jpg',
+                    backImg: 'img/steveangello.jpg',
                     connectionID: 8
                 },
                 {
-                    backTxt: 'MONGO DB',
+                    backTxt: 'Steve Angello',
                     connectionID: 8
                 },
             ]
@@ -435,6 +455,7 @@ $(function() {
         $('#btn-start').click(function() {
             brainymo.generateCardSet();
             $(this).text('Restart');
+            document.getElementById("next-boton").style.display = "inline-block";
         });
 
     });
@@ -789,3 +810,21 @@ $(function() {
             confetti.resize();
         });
     });
+
+
+    function playSound(e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        if (!audio) return; // stop the function from running all together
+        audio.currentTime = 0; // rewind to the start
+        audio.play();
+        key.classList.add('playing');
+      }
+      function removeTransition(e) {
+        if (e.propertyName !== 'transform') return; // skip it if it's not a transform
+        this.classList.remove('playing');
+      }
+
+      const keys = document.querySelectorAll('.key');
+      keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+      window.addEventListener('keydown', playSound);

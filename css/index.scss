@@ -1,7 +1,7 @@
 /* Colors */
 $white: #FFFFEA;
 $red: #FF5E5B;
-$blue: #00CECB;
+$blue: #FFCC08;
 $yellow: #FFED66;
 
 
@@ -87,6 +87,9 @@ body {
 }
 
 /* Main page */
+.overflows{
+  overflow: hidden;
+}
 
 .hidden{
   @extend .transicion-frame;
@@ -107,6 +110,7 @@ body {
     font-family: $lobster;
     color: $red;
     margin-bottom: 0;
+    width: 100%;
 }
 
 p.desc {
@@ -114,7 +118,24 @@ p.desc {
   margin-top: 0;
   margin-bottom: 60px;
 }
+#next-boton{
+  display: none;
+}
+#next-boton-2{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#pre-loading{
+  overflow: hidden;
+  .valign-div {
+    height: 95vh;
 
+  }
+}
+.carousel{
+  z-index: 100;
+}
 /* SVG escenario */
 #escenario{
 	#objetos{
@@ -174,7 +195,7 @@ p.desc {
 		.st51{fill:#855F81;}
 		.st52{fill:#EF7E87;}
 
-		#pastel{
+		#pastel, #regalos{
 			cursor: pointer;
 			position: relative;
 			z-index: 10;
@@ -223,7 +244,51 @@ p.desc {
 		height: auto !important;
 	}
 }
+#gameTwo{
+  text-align: center;
+  .keys {
+    display:flex;
+    flex:2;
 
+    min-height: 15vh;
+    max-height:17vh;
+    align-items: center;
+    justify-content: center;
+  }
+  .key {
+      display: inline-block;
+      background-color: $yellow;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      margin-left: 10px;
+      font-family: $abel;
+      font-size: 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $red;
+
+      box-shadow: 0 3px 0 $red;
+      cursor: pointer;
+      transition: all 100ms linear;
+
+      &:hover {
+          @include transform(translateY(-4px));
+          box-shadow: 0 7px 0 $red;
+      }
+
+      &:focus { outline: 0; }
+  }
+  .playing{
+    transform:scale(1.1);
+    border-color:#ffc600;
+    box-shadow: 0 0 10px #ffc600;
+  }
+  kbd {
+    display: block;
+    font-size: 40px;
+  }
+}
 /* Cards */
 
 .cards-container {
@@ -284,7 +349,8 @@ p.desc {
       cursor: pointer;
       display: inline-block;
       font-size: 22px;
-      padding-top: 15px;
+      margin-top: 50%;
+      color: white;
     }
 }
 
@@ -297,9 +363,10 @@ p.desc {
 
     label {
         display: block;
+        color: white;
         width: 100%;
         font-size: 24px;
-        margin-top: 10px;
+        margin-top: 50%;
     }
 }
 

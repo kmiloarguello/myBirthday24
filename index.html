@@ -28,6 +28,7 @@
 
     <section id="escenario" class="frame hidden">
 
+
       <?xml version="1.0" encoding="utf-8"?>
       <svg  id="objetos" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
       	 viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
@@ -66,7 +67,7 @@
       	<rect x="1299.9" y="605.7" class="st6" width="61.3" height="5"/>
       	<path class="st7" d="M572.4,584.7c0,0-1.3,12.4,8.9,21h854.2c0,0,7.8-4.6,7.8-21H572.4z"/>
       </g>
-      <g id="regalos">
+      <g id="regalos" onClick="openCarousel();">
       	<g>
       		<g>
       			<g>
@@ -631,7 +632,7 @@
       		</g>
       	</g>
       </g>
-      <g id="pastel" onClick="cambioSection('escenario','gameOne')">
+      <g id="pastel" onClick="cambioSection('escenario','gameOne'); quitarClase();">
       	<g>
       		<g id="Grupo_1_1_">
       			<g>
@@ -889,7 +890,17 @@
       </g>
       </svg>
 
+      <div class="carousel">
+        <a class="carousel-item" href="#one!"><img src="http://lorempixel.com/250/250/nature/1"></a>
+        <a class="carousel-item" href="#two!"><img src="http://lorempixel.com/250/250/nature/2"></a>
+        <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/250/250/nature/3"></a>
+        <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/250/250/nature/4"></a>
+        <a class="carousel-item" href="#five!"><img src="http://lorempixel.com/250/250/nature/5"></a>
+      </div>     
+
       <div id="confetti"></div>
+
+
 
       <?xml version="1.0" encoding="utf-8"?>
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -983,6 +994,9 @@
                 <button class="boton" id="btn-start">
                     Start
                 </button>
+                <button id="next-boton" class="boton" onClick="cambioSection('gameOne','gameTwo'); toggleAudio();">
+                    Next Game
+                </button>
 
                 <div class="cards-container">
                     <div class="flip-container hide" id="card-template">
@@ -1006,6 +1020,7 @@
                 </div>
             </div>
 
+
             <!-- <button class="btn" onClick="game.setFrameVisible('escenario'); game.setFrameHidden('gameOne');">Click</button> -->
           </div>
 
@@ -1014,7 +1029,228 @@
     </section>
 
     <section id="gameTwo" class="frame hidden">
-      <h1>Hola estas en Game 2</h1>
+
+      <h1 class="heading">Second Game</h1>
+      <p class="desc">Your mission is to play with Daft Punk's song with the base song. Press a key on you keyboard and have fun!.</p>
+
+      	<div class="keys" id="line1">
+
+        	<div data-key="81" class="key">
+          	<kbd>Q</kbd>
+          	<span class="sound">Work It</span>
+        	</div>
+
+    		<div data-key="87" class="key">
+          	<kbd>W</kbd>
+          	<span class="sound">Make It</span>
+       	</div>
+
+        	<div data-key="69" class="key">
+          	<kbd>E</kbd>
+          	<span class="sound">Do It</span>
+        	</div>
+
+        	<div data-key="82" class="key">
+          	<kbd>R</kbd>
+          	<span class="sound">Makes us</span>
+        	</div>
+
+        	<div data-key="84" class="key">
+          	<kbd>T</kbd>
+          	<span class="sound">Harder</span>
+        	</div>
+
+        	<div data-key="89" class="key">
+          	<kbd>Y</kbd>
+          	<span class="sound">Better</span>
+        	</div>
+
+       	<div data-key="85" class="key">
+          	<kbd>U</kbd>
+          	<span class="sound">Faster</span>
+        	</div>
+
+        	<div data-key="73" class="key">
+          	<kbd>I</kbd>
+          	<span class="sound">Stronger</span>
+        	</div>
+
+        	<div data-key="79" class="key">
+          	<kbd>O</kbd>
+          	<span class="sound">More Than</span>
+        	</div>
+
+    	  	<div data-key="80" class="key">
+          	<kbd>P</kbd>
+          	<span class="sound">Hour</span>
+        	</div>
+
+      	</div>
+    	<div class="keys" id="line2">
+
+        	<div data-key="65" class="key">
+          	<kbd>A</kbd>
+          	<span class="sound">Our</span>
+        	</div>
+
+        	<div data-key="83" class="key">
+          	<kbd>S</kbd>
+          	<span class="sound">Never</span>
+        	</div>
+
+    		<div data-key="68" class="key">
+          	<kbd>D</kbd>
+          	<span class="sound">Ever</span>
+        	</div>
+
+    		<div data-key="70" class="key">
+          	<kbd>F</kbd>
+          	<span class="sound">After</span>
+        	</div>
+
+    		<div data-key="71" class="key">
+          	<kbd>G</kbd>
+          	<span class="sound">Work Is</span>
+        	</div>
+
+    		<div data-key="72" class="key">
+          	<kbd>H</kbd>
+          	<span class="sound">Over</span>
+        	</div>
+
+    		<div data-key="74" class="key">
+          	<kbd>J</kbd>
+          	<span class="sound">After</span>
+        	</div>
+
+    		<div data-key="75" class="key">
+          	<kbd>K</kbd>
+          	<span class="sound">Better</span>
+        	</div>
+
+    		<div data-key="76" class="key">
+          	<kbd>L</kbd>
+          	<span class="sound">Do It</span>
+        	</div>
+
+    		<div data-key="190" class="key">
+          	<kbd>;</kbd>
+          	<span class="sound">Never</span>
+        	</div>
+
+    		<div data-key="192" class="key">
+          	<kbd>%</kbd>
+         	 	<span class="sound">Faster</span>
+        	</div>
+
+    		<div data-key="220" class="key">
+          	<kbd>*</kbd>
+          	<span class="sound">Harder</span>
+        	</div>
+      	</div>
+    	<div class="keys" id="line3">
+
+        	<div data-key="90" class="key">
+          	<kbd>Z</kbd>
+          	<span class="sound">Hour</span>
+        	</div>
+
+    		<div data-key="88" class="key">
+          	<kbd>X</kbd>
+          	<span class="sound">Make It</span>
+        	</div>
+
+    		<div data-key="67" class="key">
+          	<kbd>C</kbd>
+          	<span class="sound">Makes Us</span>
+        	</div>
+
+    		<div data-key="86" class="key">
+          	<kbd>V</kbd>
+          	<span class="sound">More Than</span>
+        	</div>
+
+    		<div data-key="66" class="key">
+          	<kbd>B</kbd>
+          	<span class="sound">Never</span>
+        	</div>
+
+    		<div data-key="78" class="key">
+          	<kbd>N</kbd>
+          	<span class="sound">Our</span>
+        	</div>
+
+    		<div data-key="77" class="key">
+          	<kbd>M</kbd>
+          	<span class="sound">Over</span>
+        	</div>
+
+    		<div data-key="190" class="key">
+          	<kbd>;</kbd>
+          	<span class="sound">Stronger</span>
+        	</div>
+
+    		<div data-key="191" class="key">
+          	<kbd>:</kbd>
+          	<span class="sound">Work is</span>
+        	</div>
+      </div>
+
+
+
+      <!--
+      A 65
+      Q 81
+      z 90
+      w 87
+      m77
+      ; 190
+       -->
+
+
+      	<audio data-key="65" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/11.wav"></audio>
+      	<audio data-key="90" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/hour.wav"></audio>
+      	<audio data-key="69" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/3.wav"></audio>
+      	<audio data-key="82" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/4.wav"></audio>
+      	<audio data-key="84" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/5.wav"></audio>
+      	<audio data-key="89" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/6.wav"></audio>
+      	<audio data-key="85" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/7.wav"></audio>
+      	<audio data-key="73" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/8.wav"></audio>
+      	<audio data-key="79" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/9.wav"></audio>
+    	<audio data-key="80" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/10.wav"></audio>
+
+    	<audio data-key="81" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/1.wav"></audio>
+    	<audio data-key="83" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/12.wav"></audio>
+    	<audio data-key="68" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/13.wav"></audio>
+    	<audio data-key="70" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/14.wav"></audio>
+    	<audio data-key="71" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/15.wav"></audio>
+    	<audio data-key="72" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/16.wav"></audio>
+    	<audio data-key="74" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/after.wav"></audio>
+    	<audio data-key="75" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/better.wav"></audio>
+    	<audio data-key="76" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/do it.wav"></audio>
+    	<audio data-key="77" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/ever.wav"></audio>
+    	<audio data-key="192" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/faster.wav"></audio>
+    	<audio data-key="220" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/harder.wav"></audio>
+
+    	<audio data-key="87" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/2.wav"></audio>
+    	<audio data-key="88" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/make it.wav"></audio>
+    	<audio data-key="67" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/makes us.wav"></audio>
+    	<audio data-key="86" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/more than.wav"></audio>
+    	<audio data-key="66" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/never.wav"></audio>
+    	<audio data-key="78" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/our.wav"></audio>
+    	<audio data-key="188" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/over.wav"></audio>
+    	<audio data-key="190" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/stronger.wav"></audio>
+    	<audio data-key="191" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/work is.wav"></audio>
+
+      <audio id="main-audio" controls loop>
+        <source src="audio/daftpunkmix.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+
+      <button id="next-boton-2" class="boton" onClick="cambioSection('gameTwo','gameThree'); pauseAudio();">
+          Next Game
+      </button>
+
     </section>
 
     <section id="gameThree" class="frame hidden">
