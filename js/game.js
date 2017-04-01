@@ -39,9 +39,12 @@ function Juego(gameDiv){
 }
 
 setTimeout(function(){
-  cambioSection('pre-loading','escenario');
+  cambioSection('pre-loading','introbirthday');
 },2000);
 
+setTimeout(function(){
+  cambioSection('introbirthday','escenario');
+},10000);
 
 function quitarClase(){
   $("body").removeClass("overflows");
@@ -49,7 +52,9 @@ function quitarClase(){
 // window.onload = toggleAudio;
 function toggleAudio(){
   var a = document.getElementById("main-audio");
-  a.play();
+  setTimeout(function(){
+    a.play();
+  },3000)
 }
 function pauseAudio(){
   var b = document.getElementById("main-audio");
@@ -78,9 +83,6 @@ function cambioSection(entrada,salida){
 
 }
 
-function openCarousel(){
-  $('.carousel').carousel({fullWidth: true});
-}
 
 var BRAINYMO = BRAINYMO || {};
 
