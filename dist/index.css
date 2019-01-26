@@ -6,28 +6,32 @@
     transform: translate(100%, 100%); }
   100% {
     transform: translate(0, 0); } }
+
 @-moz-keyframes move-the-object {
   0% {
     transform: translate(100%, 100%); }
   100% {
     transform: translate(0, 0); } }
+
 @-o-keyframes move-the-object {
   0% {
     transform: translate(100%, 100%); }
   100% {
     transform: translate(0, 0); } }
+
 @keyframes move-the-object {
   0% {
     transform: translate(100%, 100%); }
   100% {
     transform: translate(0, 0); } }
+
 .transicion-frame, .hidden, .visible {
   -webkit-transition: all ease 1s;
   -moz-transition: all ease 1s;
   -o-transition: all ease 1s;
   transition: all ease 1s; }
 
-.transicion, #escenario #objetos #pastel, #escenario #objetos #regalos {
+.transicion {
   -webkit-transition: all ease .4s;
   -moz-transition: all ease .4s;
   -o-transition: all ease .4s;
@@ -35,10 +39,9 @@
 
 /* General */
 body {
-  background-color: #FFFFEA;
-  background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png");
+  background-color: #444;
   font-family: "Abel", sans-serif;
-  color: #FF5E5B; }
+  color: #FFFFEA; }
 
 /* Main page */
 .overflows {
@@ -59,7 +62,7 @@ body {
 .heading {
   font-size: 52px;
   font-family: "Lobster", cursive;
-  color: #FF5E5B;
+  color: #FFFFEA;
   margin-bottom: 0;
   width: 100%; }
 
@@ -84,159 +87,6 @@ p.desc {
 .carousel {
   z-index: 100; }
 
-/* SVG escenario */
-#escenario #objetos {
-  position: absolute;
-  z-index: 10; }
-  #escenario #objetos .st0 {
-    fill: #6B2E00; }
-  #escenario #objetos .st1 {
-    fill: #B97941; }
-  #escenario #objetos .st2 {
-    fill: #732E02; }
-  #escenario #objetos .st3 {
-    fill: #BC743C; }
-  #escenario #objetos .st4 {
-    fill: #883C02; }
-  #escenario #objetos .st5 {
-    fill: #70340B; }
-  #escenario #objetos .st6 {
-    fill: #662806; }
-  #escenario #objetos .st7 {
-    fill: #7C3709; }
-  #escenario #objetos .st8 {
-    fill: #84BF51; }
-  #escenario #objetos .st9 {
-    fill: #57C6BE; }
-  #escenario #objetos .st10 {
-    fill: #79B942; }
-  #escenario #objetos .st11 {
-    fill: #6FCEC8; }
-  #escenario #objetos .st12 {
-    fill: #3FBEB5; }
-  #escenario #objetos .st13 {
-    fill: #94C768; }
-  #escenario #objetos .st14 {
-    fill: #69A530; }
-  #escenario #objetos .st15 {
-    fill: #0FAEA3; }
-  #escenario #objetos .st16 {
-    fill: #F18E96; }
-  #escenario #objetos .st17 {
-    fill: #F39EA5; }
-  #escenario #objetos .st18 {
-    fill: #EE7680; }
-  #escenario #objetos .st19 {
-    fill: #EB5E69; }
-  #escenario #objetos .st20 {
-    fill: #F7B461; }
-  #escenario #objetos .st21 {
-    fill: #F6AA4B; }
-  #escenario #objetos .st22 {
-    fill: #F49F34; }
-  #escenario #objetos .st23 {
-    fill: #F5A949; }
-  #escenario #objetos .st24 {
-    fill: #F3941E; }
-  #escenario #objetos .st25 {
-    fill: #8D8D8D; }
-  #escenario #objetos .st26 {
-    fill: #7E557A; }
-  #escenario #objetos .st27 {
-    fill: #6D3F68; }
-  #escenario #objetos .st28 {
-    fill: #71456D; }
-  #escenario #objetos .st29 {
-    fill: #673762; }
-  #escenario #objetos .st30 {
-    fill: #81597D; }
-  #escenario #objetos .st31 {
-    fill: #906D8C; }
-  #escenario #objetos .st32 {
-    fill: #3666C6; }
-  #escenario #objetos .st33 {
-    fill: #2069D3; }
-  #escenario #objetos .st34 {
-    fill: #4D7ECE; }
-  #escenario #objetos .st35 {
-    fill: #8EC460; }
-  #escenario #objetos .st36 {
-    fill: #AFD58D; }
-  #escenario #objetos .st37 {
-    fill: #E2375C; }
-  #escenario #objetos .st38 {
-    fill: #EA1F4B; }
-  #escenario #objetos .st39 {
-    fill: #E0466F; }
-  #escenario #objetos .st40 {
-    fill: #575756; }
-  #escenario #objetos .st41 {
-    fill: #6F6F6E; }
-  #escenario #objetos .st42 {
-    fill: #868686; }
-  #escenario #objetos .st43 {
-    fill: #F8C27F; }
-  #escenario #objetos .st44 {
-    fill: #764B72; }
-  #escenario #objetos .st45 {
-    fill: #FFFFFF; }
-  #escenario #objetos .st46 {
-    fill: #68CCC5; }
-  #escenario #objetos .st47 {
-    fill: #4DC3BB; }
-  #escenario #objetos .st48 {
-    fill: #FBE341; }
-  #escenario #objetos .st49 {
-    fill: #FDEF93; }
-  #escenario #objetos .st50 {
-    fill: #504F4E; }
-  #escenario #objetos .st51 {
-    fill: #855F81; }
-  #escenario #objetos .st52 {
-    fill: #EF7E87; }
-  #escenario #objetos #pastel, #escenario #objetos #regalos {
-    cursor: pointer;
-    position: relative;
-    z-index: 10; }
-    #escenario #objetos #pastel:hover, #escenario #objetos #regalos:hover {
-      -webkit-transform: scale3d(1, 0.98, 1.05);
-      -moz-transform: scale3d(1, 0.98, 1.05);
-      -ms-transform: scale3d(1, 0.98, 1.05);
-      -o-transform: scale3d(1, 0.98, 1.05);
-      transform: scale3d(1, 0.98, 1.05); }
-  #escenario #objetos #bomba_x5F_azul {
-    -webkit-animation: move-the-object 35s;
-    -moz-animation: move-the-object 35s;
-    -o-animation: move-the-object 35s;
-    animation: move-the-object 35s; }
-  #escenario #objetos #bomba_x5F_verde {
-    -webkit-animation: move-the-object 35s;
-    -moz-animation: move-the-object 35s;
-    -o-animation: move-the-object 35s;
-    animation: move-the-object 35s; }
-  #escenario #objetos #bomba_x5F_roja, #escenario #objetos #bomba_x5F_rojo {
-    -webkit-animation: move-the-object 30s;
-    -moz-animation: move-the-object 30s;
-    -o-animation: move-the-object 30s;
-    animation: move-the-object 30s; }
-  #escenario #objetos #bomba_x5F_purple {
-    -webkit-animation: move-the-object 60s;
-    -moz-animation: move-the-object 60s;
-    -o-animation: move-the-object 60s;
-    animation: move-the-object 60s; }
-  #escenario #objetos #bombas {
-    -webkit-animation: move-the-object 100s;
-    -moz-animation: move-the-object 100s;
-    -o-animation: move-the-object 100s;
-    animation: move-the-object 100s; }
-#escenario #confetti {
-  height: 100%;
-  left: 0px;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  z-index: 1; }
-
 #cambio-section {
   display: none;
   height: 100%;
@@ -247,6 +97,9 @@ p.desc {
   z-index: 100; }
   #cambio-section svg {
     height: auto !important; }
+
+#introduction {
+  position: relative; }
 
 #gameTwo {
   text-align: center; }
@@ -259,17 +112,17 @@ p.desc {
     justify-content: center; }
   #gameTwo .key {
     display: inline-block;
-    background-color: #FFED66;
+    background-color: #FFFFEA;
     padding: 10px 20px;
     border: none;
     border-radius: 30px;
     margin-left: 10px;
     font-family: "Abel", sans-serif;
-    font-size: 20px;
+    font-size: 1em;
     text-decoration: none;
     text-transform: uppercase;
-    color: #FF5E5B;
-    box-shadow: 0 3px 0 #FF5E5B;
+    color: #444;
+    box-shadow: 0 3px 0 #444;
     cursor: pointer;
     transition: all 100ms linear; }
     #gameTwo .key:hover {
@@ -278,13 +131,19 @@ p.desc {
       -ms-transform: translateY(-4px);
       -webkit-transform: translateY(-4px);
       transform: translateY(-4px);
-      box-shadow: 0 7px 0 #FF5E5B; }
+      box-shadow: 0 7px 0 #FFED66;
+      color: #FFED66; }
     #gameTwo .key:focus {
       outline: 0; }
   #gameTwo .playing {
-    transform: scale(1.1);
+    -moz-transform: translateY(-4px);
+    -o-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+    box-shadow: 0 7px 0 #FFED66;
     border-color: #ffc600;
-    box-shadow: 0 0 10px #ffc600; }
+    color: #FFED66; }
   #gameTwo kbd {
     display: block;
     font-size: 40px; }
@@ -384,7 +243,7 @@ p.desc {
 /* Buttons */
 .boton {
   display: inline-block;
-  background-color: #FFED66;
+  background-color: #FFFFEA;
   padding: 15px 40px;
   border: none;
   border-radius: 30px;
@@ -426,34 +285,39 @@ p.desc {
 
 /* Reponsive Rules */
 @media screen and (max-width: 1200px) {
-  .flip-container, .front, .back {
+  .flip-container,
+  .front,
+  .back {
     width: 140px;
     height: 180px; }
-
   .timer {
     padding: 10px;
     border-radius: 5px;
     background-color: #FFFFEA; } }
+
 @media screen and (max-width: 992px) {
-  .flip-container, .front, .back {
+  .flip-container,
+  .front,
+  .back {
     width: 100px;
     height: 140px; }
-
   .front label {
     display: inline-block;
     font-size: 16px;
     padding-top: 10px; }
-
   .cards-container {
     margin: 40px 10px; }
-
   .timer {
     top: 10px;
     left: 10px; } }
+
 @media screen and (max-width: 768px) {
-  .flip-container, .front, .back {
+  .flip-container,
+  .front,
+  .back {
     width: 80px;
     height: 120px; } }
+
 /* Animations */
 @keyframes wobble {
   from {
@@ -470,7 +334,7 @@ p.desc {
     transform: translate3d(-10%, 0, 0) rotate3d(0, 0, 1, -1deg); }
   to {
     transform: none; } }
+
 .wobble {
   animation: wobble 600ms ease-in-out; }
 
-/*# sourceMappingURL=index.css.map */

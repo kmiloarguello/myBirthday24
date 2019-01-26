@@ -3,6 +3,7 @@ $white: #FFFFEA;
 $red: #FF5E5B;
 $blue: #FFCC08;
 $yellow: #FFED66;
+$black: #444;
 
 
 /* Fonts */
@@ -80,10 +81,9 @@ $bgPattern: "https://www.transparenttextures.com/patterns/inspiration-geometry.p
 /* General */
 
 body {
-    background-color: $white;
-    background-image: url($bgPattern);
+    background-color: $black;
     font-family: $abel;
-    color: $red;
+    color: $white;
 }
 
 /* Main page */
@@ -108,7 +108,7 @@ body {
 .heading {
     font-size: 52px;
     font-family: $lobster;
-    color: $red;
+    color: $white;
     margin-bottom: 0;
     width: 100%;
 }
@@ -136,100 +136,7 @@ p.desc {
 .carousel{
   z-index: 100;
 }
-/* SVG escenario */
-#escenario{
-	#objetos{
-		position: absolute;
-		z-index: 10;
-		.st0{fill:#6B2E00;}
-		.st1{fill:#B97941;}
-		.st2{fill:#732E02;}
-		.st3{fill:#BC743C;}
-		.st4{fill:#883C02;}
-		.st5{fill:#70340B;}
-		.st6{fill:#662806;}
-		.st7{fill:#7C3709;}
-		.st8{fill:#84BF51;}
-		.st9{fill:#57C6BE;}
-		.st10{fill:#79B942;}
-		.st11{fill:#6FCEC8;}
-		.st12{fill:#3FBEB5;}
-		.st13{fill:#94C768;}
-		.st14{fill:#69A530;}
-		.st15{fill:#0FAEA3;}
-		.st16{fill:#F18E96;}
-		.st17{fill:#F39EA5;}
-		.st18{fill:#EE7680;}
-		.st19{fill:#EB5E69;}
-		.st20{fill:#F7B461;}
-		.st21{fill:#F6AA4B;}
-		.st22{fill:#F49F34;}
-		.st23{fill:#F5A949;}
-		.st24{fill:#F3941E;}
-		.st25{fill:#8D8D8D;}
-		.st26{fill:#7E557A;}
-		.st27{fill:#6D3F68;}
-		.st28{fill:#71456D;}
-		.st29{fill:#673762;}
-		.st30{fill:#81597D;}
-		.st31{fill:#906D8C;}
-		.st32{fill:#3666C6;}
-		.st33{fill:#2069D3;}
-		.st34{fill:#4D7ECE;}
-		.st35{fill:#8EC460;}
-		.st36{fill:#AFD58D;}
-		.st37{fill:#E2375C;}
-		.st38{fill:#EA1F4B;}
-		.st39{fill:#E0466F;}
-		.st40{fill:#575756;}
-		.st41{fill:#6F6F6E;}
-		.st42{fill:#868686;}
-		.st43{fill:#F8C27F;}
-		.st44{fill:#764B72;}
-		.st45{fill:#FFFFFF;}
-		.st46{fill:#68CCC5;}
-		.st47{fill:#4DC3BB;}
-		.st48{fill:#FBE341;}
-		.st49{fill:#FDEF93;}
-		.st50{fill:#504F4E;}
-		.st51{fill:#855F81;}
-		.st52{fill:#EF7E87;}
 
-		#pastel, #regalos{
-			cursor: pointer;
-			position: relative;
-			z-index: 10;
-			@extend .transicion;
-			&:hover{
-				@include myscale(1,0.98,1.05);
-			}
-		}
-		#bomba_x5F_azul{
-			@include animation('move-the-object 35s');
-		}
-		#bomba_x5F_verde{
-			@include animation('move-the-object 35s');
-		}
-		#bomba_x5F_roja, #bomba_x5F_rojo{
-			@include animation('move-the-object 30s');
-		}
-		#bomba_x5F_purple{
-			@include animation('move-the-object 60s');
-		}
-		#bombas{
-			@include animation('move-the-object 100s');
-		}
-
-	}
-	#confetti{
-		height: 100%;
-		left: 0px;
-		position: fixed;
-		top: 0px;
-		width: 100%;
-		z-index: 1;
-	}
-}
 
 
 #cambio-section{
@@ -244,12 +151,15 @@ p.desc {
 		height: auto !important;
 	}
 }
+
+#introduction{
+    position: relative;
+}
 #gameTwo{
   text-align: center;
   .keys {
     display:flex;
     flex:2;
-
     min-height: 15vh;
     max-height:17vh;
     align-items: center;
@@ -257,32 +167,34 @@ p.desc {
   }
   .key {
       display: inline-block;
-      background-color: $yellow;
+      background-color: $white;
       padding: 10px 20px;
       border: none;
       border-radius: 30px;
       margin-left: 10px;
       font-family: $abel;
-      font-size: 20px;
+      font-size: 1em;
       text-decoration: none;
       text-transform: uppercase;
-      color: $red;
-
-      box-shadow: 0 3px 0 $red;
+      color: $black;
+      box-shadow: 0 3px 0 $black;
       cursor: pointer;
       transition: all 100ms linear;
 
+
       &:hover {
           @include transform(translateY(-4px));
-          box-shadow: 0 7px 0 $red;
+          box-shadow: 0 7px 0 $yellow;
+          color: $yellow;
       }
 
       &:focus { outline: 0; }
   }
   .playing{
-    transform:scale(1.1);
+    @include transform(translateY(-4px));
+    box-shadow: 0 7px 0 $yellow;
     border-color:#ffc600;
-    box-shadow: 0 0 10px #ffc600;
+    color: $yellow;
   }
   kbd {
     display: block;
@@ -395,7 +307,7 @@ p.desc {
 
 .boton {
     display: inline-block;
-    background-color: $yellow;
+    background-color: $white;
     padding: 15px 40px;
     border: none;
     border-radius: 30px;
