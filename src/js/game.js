@@ -33,7 +33,8 @@ class Buffer {
     }
 
     loaded() {
-        console.log("Loaded");
+		document.getElementById("start").innerText = "Start";
+		document.getElementById("start").classList.remove("disabled");
     }
 
     getSoundByIndex(index) {
@@ -102,7 +103,7 @@ var sounds = [
     "https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/over.wav",
     "https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/stronger.wav",
     "https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/work is.wav",
-    "../audio/daftpunkmix.mp3"
+    "http://localhost:8080/src/audio/daftpunkmix.mp3"
 ];
 
 class Game {
@@ -113,13 +114,16 @@ class Game {
         this.framesNames = [];
         this.changeSection = this.changeSection.bind(this);
         this.removeTransition = this.removeTransition.bind(this);
-        this.playSounds = this.playSounds.bind(this);
+		this.playSounds = this.playSounds.bind(this);
+		this.takeTest = this.takeTest.bind(this);
+		this.restartGame = this.restartGame.bind(this);
 
         this.context = new (window.AudioContext || window.webkitAudioContext)();
         this.buffer = new Buffer(this.context, sounds);
-        this.buffer.loadAll();
+		this.buffer.loadAll();
+		this.isBaseLoaded = false;
 
-        this.eventListener();
+		this.eventListener();
     }
     eventListener() {
         this.game = this.setupSteps(document.getElementById("Birthday"));
@@ -127,16 +131,16 @@ class Game {
         // Start Button
         let startButton = document.getElementById("start");
         startButton.addEventListener("click", () => {
-            this.changeSection("introduction", "gameTwo");
+            this.initHarderBetter();
         });
 
         let keys = document.querySelectorAll(".key");
-        keys.forEach(key =>
-            key.addEventListener("transitionend", this.removeTransition)
-        );
-        window.addEventListener("keydown", this.playSounds);
-
-    }
+		keys.forEach(key => {
+				key.addEventListener("transitionend", this.removeTransition)
+				key.addEventListener("click",this.playSounds)
+		});
+	}
+	// For handle movements between sections
     setupSteps(gameDiv) {
         for (var i = 0; i < gameDiv.childNodes.length; i++) {
             var id = gameDiv.childNodes[i].id;
@@ -162,27 +166,87 @@ class Game {
         };
     }
     changeSection(prev, next) {
-        this.game.setFrameHidden(prev);
-        this.game.setFrameVisible(next);
+        document.getElementsByClassName("thomas")[0].classList.add("active");
+        document.getElementsByClassName("guy")[0].classList.add("active");
+        document.getElementsByTagName("splash")[0].classList.add("hideCont");
+        document.getElementById("start").classList.add("hideBoton");
+
+        setTimeout(() => {
+            this.game.setFrameHidden(prev);
+            this.game.setFrameVisible(next);
+        }, 3000);
+	}
+	// Activate events of Game
+    initHarderBetter() {
+        this.changeSection("introduction", "gameTwo");
+		window.addEventListener("keydown", this.playSounds);
+
+		document.getElementById("test-play").addEventListener("click",this.takeTest);
+		document.getElementById("restart").addEventListener("click",this.restartGame);				
     }
     playSounds(e) {
         var dataKey = document.querySelectorAll(
             '[data-key="' + e.keyCode + '"]'
-        );
-        if (dataKey.length > 0) {
-            var key = dataKey[0];
+		);
+		var elem = e.target.closest("div");
+        if (dataKey.length > 0 || elem) {
+			var key, index;
 
-            var index = parseInt(key.attributes[0].value);
+			// If event comes from keypressed
+			// Or if it was by click
+			if(dataKey.length > 0){
+				key = dataKey[0];
+				index = parseInt(key.attributes[0].value);
+			}else{
+				key = elem;
+				index = parseInt(elem.getAttribute("data-sound"));
+				
+				// Deactivate button
+				setTimeout(() => {
+					elem.classList.remove("playing");
+				}, 100);
+			}
 
-            var sound = new Sound(this.context, this.buffer.getSoundByIndex(index));
+            var sound = new Sound(
+                this.context,
+                this.buffer.getSoundByIndex(index)
+            );
             key.classList.add("playing");
-            sound.play();
-        }
+			sound.play();
+		}
     }
     removeTransition(e) {
         if (e.propertyName !== "transform") return; // skip it if it's not a transform
         e.target.classList.remove("playing");
-    }
+	}
+	takeTest(){
+		// To handle only one click preventing many sounds
+		if(!this.isBaseLoaded){
+			var baseSound = new Sound(
+				this.context,
+				this.buffer.getSoundByIndex(sounds.length - 1)
+			);
+	
+			var counter = 6;
+			var startBaseSound = setInterval(function(){
+			
+			document.getElementsByClassName("counter")[0].classList.remove("hidden");
+			document.getElementById("counter-text").innerText = counter;
+	
+			counter--;
+			if (counter === 0) {
+				baseSound.play();
+				document.getElementsByClassName("counter")[0].classList.add("hidden");
+				clearInterval(startBaseSound);
+			}
+			}, 1000);
+		}
+	
+		this.isBaseLoaded = true;
+	}
+	restartGame(){
+		location.reload(false);
+	}
 }
 
 const game = new Game();

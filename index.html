@@ -29,8 +29,11 @@
     <body>
         <main id="Birthday" class="hide-on-med-and-down">
             <section id="introduction" class="frame visible">
-				<div>Lorem ipsum</div>
-                <button id="start">Go for it</button>
+                <button id="start" class="boton disabled">Loading..</button>
+                <splash>
+                    <img src="http://www.randomaccessmemories.com/images/thomas.jpg" class="thomas"/>
+                    <img src="http://www.randomaccessmemories.com/images/guy.jpg"class="guy" />
+                </splash>
             </section>
 
             <section id="gameTwo" class="frame hidden">
@@ -166,13 +169,18 @@
                     <div data-sound="30" data-key="190" class="key">
                         <kbd>:</kbd> <span class="sound">Work is</span>
                     </div>
-                </div>
+				</div>
 
+				<button id="test-play" class="key">Try the test</button>
+				
+				<button id="restart" class="key ">Restart</button>
+
+				<div class="counter hidden">
+					<p>Your test will start in</p>
+					<h3 id="counter-text">5</h3>
+				</div>
             </section>
-           
         </main>
-
-
 
         <script
             type="text/javascript"
@@ -181,6 +189,5 @@
         <script type="text/javascript" src="src/js/materialize.min.js"></script>
         <script type="text/javascript" src="src/js/bodymovin.js"></script>
         <script type="text/javascript" src="dist/game.js"></script>
-
     </body>
 </html>

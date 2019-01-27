@@ -39,7 +39,7 @@
 
 /* General */
 body {
-  background-color: #444;
+  background-color: #000;
   font-family: "Abel", sans-serif;
   color: #FFFFEA; }
 
@@ -98,6 +98,47 @@ p.desc {
   #cambio-section svg {
     height: auto !important; }
 
+/* Daft Punk */
+splash {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  opacity: 1;
+  z-index: 10; }
+  splash img {
+    position: fixed;
+    height: 450px;
+    margin-top: 80px; }
+  splash.hideCont {
+    animation: hideSplash 4s 3s ease forwards; }
+  splash .thomas {
+    transform: translate(-322px, 0); }
+    splash .thomas.active {
+      animation: thomasSlide 4s ease-in forwards; }
+  splash .guy.active {
+    animation: guySlide 4s ease-in forwards; }
+
+@keyframes thomasSlide {
+  from {
+    transform: translate(-322px, 0); }
+  to {
+    transform: translate(-120vw, 0);
+    visibility: hidden; } }
+
+@keyframes guySlide {
+  from {
+    transform: translate(0, 0); }
+  to {
+    transform: translate(100vw, 0);
+    visibility: hidden; } }
+
+@keyframes hideSplash {
+  from {
+    visibility: visible; }
+  to {
+    visibility: hidden; } }
+
 #introduction {
   position: relative; }
 
@@ -121,8 +162,8 @@ p.desc {
     font-size: 1em;
     text-decoration: none;
     text-transform: uppercase;
-    color: #444;
-    box-shadow: 0 3px 0 #444;
+    color: #000;
+    box-shadow: 0 3px 0 #000;
     cursor: pointer;
     transition: all 100ms linear; }
     #gameTwo .key:hover {
@@ -147,6 +188,22 @@ p.desc {
   #gameTwo kbd {
     display: block;
     font-size: 40px; }
+
+#restart {
+  position: absolute;
+  bottom: 20px;
+  left: 20px; }
+  #restart:hover {
+    box-shadow: 0 7px 0 #444 !important;
+    color: #444 !important; }
+
+#test-play {
+  position: absolute;
+  bottom: 20px;
+  right: 20px; }
+  #test-play:hover {
+    box-shadow: 0 7px 0 #FF5E5B !important;
+    color: #FF5E5B !important; }
 
 /* Cards */
 .cards-container {
@@ -242,7 +299,11 @@ p.desc {
 
 /* Buttons */
 .boton {
-  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 30vh;
+  z-index: 11;
+  transform: translateX(-50%);
   background-color: #FFFFEA;
   padding: 15px 40px;
   border: none;
@@ -251,19 +312,38 @@ p.desc {
   font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
-  color: #FF5E5B;
-  box-shadow: 0 3px 0 #FF5E5B;
+  color: #000;
   cursor: pointer;
   transition: all 100ms linear; }
   .boton:hover {
-    -moz-transform: translateY(-4px);
-    -o-transform: translateY(-4px);
-    -ms-transform: translateY(-4px);
-    -webkit-transform: translateY(-4px);
-    transform: translateY(-4px);
-    box-shadow: 0 7px 0 #FF5E5B; }
+    color: #FFED66; }
   .boton:focus {
-    outline: 0; }
+    background-color: #FFFFEA; }
+  .boton.hideBoton {
+    animation: hideSplash 3s ease forwards; }
+  .boton.disabled {
+    pointer-events: none;
+    opacity: .7; }
+
+.counter {
+  position: fixed;
+  z-index: 999;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 25%;
+  background: rgba(0, 0, 0, 0.7);
+  width: 300px;
+  height: auto; }
+  .counter p {
+    color: #FFFFEA;
+    font-size: 2em; }
+  .counter h3 {
+    font-size: 8em;
+    color: #FFFFEA;
+    font-weight: bold; }
+  .counter.hidden {
+    display: none; }
 
 /* Github ribbon */
 #github {

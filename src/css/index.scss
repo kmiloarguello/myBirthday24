@@ -3,7 +3,8 @@ $white: #FFFFEA;
 $red: #FF5E5B;
 $blue: #FFCC08;
 $yellow: #FFED66;
-$black: #444;
+$black: #000;
+$gray: #444;
 
 
 /* Fonts */
@@ -152,6 +153,54 @@ p.desc {
 	}
 }
 
+/* Daft Punk */
+splash{
+	position:fixed;
+	height:100%;
+	width:100%;
+	text-align:center;
+	opacity:1;
+    z-index: 10;
+    img{
+        position:fixed;
+        height:450px;
+        margin-top:80px;
+    }
+    &.hideCont{
+        animation: hideSplash 4s 3s ease forwards;
+    }
+    .thomas{
+        transform:translate(-322px,0);
+        &.active{
+            animation:thomasSlide 4s ease-in forwards;
+        }
+    }
+    .guy{
+        &.active{
+            animation:guySlide 4s ease-in forwards;
+        }
+    }
+	
+}
+
+
+@keyframes thomasSlide{
+	from{transform:translate(-322px,0);}
+	to{transform:translate(-120vw,0);visibility:hidden;}
+}
+
+@keyframes guySlide{
+	from{transform:translate(0,0);}
+	to{transform:translate(100vw,0);visibility:hidden;}
+}
+
+@keyframes hideSplash{
+	from{visibility:visible;}
+	to{visibility:hidden;}
+}
+
+
+
 #introduction{
     position: relative;
 }
@@ -200,6 +249,25 @@ p.desc {
     display: block;
     font-size: 40px;
   }
+}
+
+#restart{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    &:hover {
+        box-shadow: 0 7px 0 $gray !important;
+        color: $gray !important;
+    }
+}
+#test-play{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    &:hover {
+        box-shadow: 0 7px 0 $red !important;
+        color: $red !important;
+    }
 }
 /* Cards */
 
@@ -306,30 +374,62 @@ p.desc {
 /* Buttons */
 
 .boton {
-    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 30vh;
+    z-index: 11;
+    transform: translateX(-50%);
     background-color: $white;
     padding: 15px 40px;
     border: none;
     border-radius: 30px;
-
     font-family: $abel;
     font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
-    color: $red;
-
-    box-shadow: 0 3px 0 $red;
+    color: $black;
     cursor: pointer;
     transition: all 100ms linear;
 
     &:hover {
-        @include transform(translateY(-4px));
-        box-shadow: 0 7px 0 $red;
+        color: $yellow;
     }
 
-    &:focus { outline: 0; }
+    &:focus {
+        background-color: $white; 
+    }
+    &.hideBoton{
+        animation: hideSplash 3s ease forwards;
+    }
+    &.disabled{
+        pointer-events: none;
+        opacity: .7;
+    }
 }
 
+.counter{
+    position: fixed;
+    z-index: 999;
+    display: block;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25%;
+    background: rgba(0,0,0,.7);
+    width: 300px;
+    height: auto;
+    p{
+        color: $white;
+        font-size: 2em;
+    }
+    h3{
+        font-size: 8em;
+        color: $white;
+        font-weight: bold;
+    }
+    &.hidden{
+        display: none;
+    }
+}
 
 /* Github ribbon */
 #github {
