@@ -1,8 +1,18 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const minify = require("html-minifier").minify;
 const devMode = process.env.NODE_ENV !== 'production';
+
+const minifyConfig = {
+    collapseWhitespace : true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+    useShortDoctype: true,
+    quoteCharacter: '"'
+};
 
 module.exports = {
     entry: "./src/js/game.js",
@@ -46,12 +56,13 @@ module.exports = {
             filename: "css/index.css",
             chunkFilename: "id.css"
         }),
+        new OptimizeCSSAssetsPlugin({}),
         new HtmlWebpackPlugin({
             inject: true,
             template: path.resolve(__dirname, "src/views/index.html"),
             title: "CA",
             devMode: devMode,
-            minify: devMode ? false : true
+            minify: devMode ? false : minifyConfig
       }),
         new CopyWebpackPlugin([
             {
@@ -67,13 +78,13 @@ module.exports = {
                 toType: "file"
             }
         ]),
-        devMode ? new CopyWebpackPlugin([
+        new CopyWebpackPlugin([
             {
                 from: path.resolve(__dirname,"src/audio/daftpunkmix.mp3"),
                 to: path.resolve(__dirname, "dist/audio/daftpunkmix.mp3"),
                 toType: "file"
             }
-        ]) : ""
+        ])
     ],
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
