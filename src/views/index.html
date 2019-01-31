@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="shortcut icon" href="svg/icon_birthday.ico" type="image/x-icon"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Abel|Lobster" rel="stylesheet" />
+        <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+        <link type="text/css" rel="stylesheet" href="/css/index.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Harder Better</title>
+    </head>
+    <body>
+        <main id="Birthday">
+            <section id="introduction" class="frame visible">
+                <button id="start" class="boton disabled">Loading..</button>
+                <splash>
+                    <img src="https://camiloarguello.xyz/harder-better/images/thomas.jpg" class="thomas"/>
+                    <img src="https://camiloarguello.xyz/harder-better/images/guy.jpg"class="guy" />
+                </splash>
+            </section>
+
+            <section id="gameTwo" class="frame hidden">
+                <h1 class="heading">Harder Better</h1>
+                <p class="desc">
+                    Your mission is to play with Daft Punk's song with the base
+                    song. Press a key on your keyboard and have fun!.
+                </p>
+
+                <div class="keys" id="line1">
+                    <div data-sound="0" data-key="81" class="key">
+                        <kbd>Q</kbd> <span class="sound">Work It</span>
+                    </div>
+
+                    <div data-sound="1" data-key="87" class="key">
+                        <kbd>W</kbd> <span class="sound">Make It</span>
+                    </div>
+
+                    <div data-sound="2" data-key="69" class="key">
+                        <kbd>E</kbd> <span class="sound">Do It</span>
+                    </div>
+
+                    <div data-sound="3" data-key="82" class="key">
+                        <kbd>R</kbd> <span class="sound">Makes us</span>
+                    </div>
+
+                    <div data-sound="4" data-key="84" class="key">
+                        <kbd>T</kbd> <span class="sound">Harder</span>
+                    </div>
+
+                    <div data-sound="5" data-key="89" class="key">
+                        <kbd>Y</kbd> <span class="sound">Better</span>
+                    </div>
+
+                    <div data-sound="6" data-key="85" class="key">
+                        <kbd>U</kbd> <span class="sound">Faster</span>
+                    </div>
+
+                    <div data-sound="7" data-key="73" class="key">
+                        <kbd>I</kbd> <span class="sound">Stronger</span>
+                    </div>
+
+                    <div data-sound="8" data-key="79" class="key">
+                        <kbd>O</kbd> <span class="sound">More Than</span>
+                    </div>
+
+                    <div data-sound="9" data-key="80" class="key">
+                        <kbd>P</kbd> <span class="sound">Hour</span>
+                    </div>
+                </div>
+                <div class="keys" id="line2">
+                    <div data-sound="10" data-key="65" class="key">
+                        <kbd>A</kbd> <span class="sound">Our</span>
+                    </div>
+
+                    <div data-sound="11" data-key="83" class="key">
+                        <kbd>S</kbd> <span class="sound">Never</span>
+                    </div>
+
+                    <div data-sound="12" data-key="68" class="key">
+                        <kbd>D</kbd> <span class="sound">Ever</span>
+                    </div>
+
+                    <div data-sound="13" data-key="70" class="key">
+                        <kbd>F</kbd> <span class="sound">After</span>
+                    </div>
+
+                    <div data-sound="14" data-key="71" class="key">
+                        <kbd>G</kbd> <span class="sound">Work Is</span>
+                    </div>
+
+                    <div data-sound="15" data-key="72" class="key">
+                        <kbd>H</kbd> <span class="sound">Over</span>
+                    </div>
+
+                    <div data-sound="16" data-key="74" class="key">
+                        <kbd>J</kbd> <span class="sound">After</span>
+                    </div>
+
+                    <div data-sound="17" data-key="75" class="key">
+                        <kbd>K</kbd> <span class="sound">Better</span>
+                    </div>
+
+                    <div data-sound="18" data-key="76" class="key">
+                        <kbd>L</kbd> <span class="sound">Do It</span>
+                    </div>
+
+                    <div data-sound="19" data-key="192" class="key">
+                        <kbd>ñ</kbd> <span class="sound">Never</span>
+                    </div>
+
+                    <div data-sound="20" data-key="222" class="key">
+                        <kbd>{</kbd> <span class="sound">Faster</span>
+                    </div>
+
+                    <div data-sound="21" data-key="191" class="key">
+                        <kbd>}</kbd> <span class="sound">Harder</span>
+                    </div>
+                </div>
+                <div class="keys" id="line3">
+                    <div data-sound="22" data-key="90" class="key">
+                        <kbd>Z</kbd> <span class="sound">Hour</span>
+                    </div>
+
+                    <div data-sound="23" data-key="88" class="key">
+                        <kbd>X</kbd> <span class="sound">Make It</span>
+                    </div>
+
+                    <div data-sound="24" data-key="67" class="key">
+                        <kbd>C</kbd> <span class="sound">Makes Us</span>
+                    </div>
+
+                    <div data-sound="25" data-key="86" class="key">
+                        <kbd>V</kbd> <span class="sound">More Than</span>
+                    </div>
+
+                    <div data-sound="26" data-key="66" class="key">
+                        <kbd>B</kbd> <span class="sound">Never</span>
+                    </div>
+
+                    <div data-sound="27" data-key="78" class="key">
+                        <kbd>N</kbd> <span class="sound">Our</span>
+                    </div>
+
+                    <div data-sound="28" data-key="77" class="key">
+                        <kbd>M</kbd> <span class="sound">Over</span>
+                    </div>
+
+                    <div data-sound="29" data-key="188" class="key">
+                        <kbd>,</kbd> <span class="sound">Stronger</span>
+                    </div>
+
+                    <div data-sound="30" data-key="190" class="key">
+                        <kbd>.</kbd> <span class="sound">Work is</span>
+                    </div>
+                </div>
+                
+                <div class="lyrics">
+                    <p class="prev">Past</p>
+                    <p>Now</p>
+                    <p class="next">Next</p>
+                </div>
+
+				<button id="test-play" class="key">Try with the song</button>
+				
+				<button id="restart" class="key ">Restart</button>
+
+				<div class="counter hidden">
+					<p>The song will start in</p>
+					<h3 id="counter-text">5</h3>
+				</div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container-footer">
+                <p id="copyright">CA 2019</p>
+                <small>This is an educational project. All the audio and image files used are property of Daft Punk.</small>
+                
+            </div>
+        </footer>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <!-- <script type="text/javascript" src="src/js/bodymovin.js"></script> -->
+        <script type="text/javascript" src="/js/materialize.min.js"></script>
+        <script type="text/javascript" src="/js/game.js"></script>
+    </body>
+</html>

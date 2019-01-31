@@ -213,6 +213,10 @@ splash{
     max-height:17vh;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 760px){
+        flex-wrap: wrap;
+        max-height: initial;
+    }
   }
   .key {
       display: inline-block;
@@ -230,6 +234,12 @@ splash{
       cursor: pointer;
       transition: all 100ms linear;
 
+      @media screen and (max-width: 760px){
+        padding: 5px;
+        border-radius: 20px;
+        margin-left: 5px;
+        font-size: 0em;
+    }
 
       &:hover {
           @include transform(translateY(-4px));
@@ -269,87 +279,6 @@ splash{
         color: $red !important;
     }
 }
-/* Cards */
-
-.cards-container {
-    display: block;
-    margin: 40px;
-}
-
-.flip-container {
-    position: relative;
-    display: inline-block;
-    margin: 15px;
-    perspective: 1000px;
-    cursor: pointer;
-
-    .flipper {
-        position: relative;
-        -webkit-transform-style: preserve-3d;
-        -webkit-transition: 0.5s;
-        -moz-transform-style: preserve-3d;
-        -moz-transition: 0.5s;
-        -ms-transform-style: preserve-3d;
-        -ms-transition: 0.5s;
-        -o-transform-style: preserve-3d;
-        -o-transition: 0.5s;
-    }
-
-    &.active .flipper {
-        @include transform(rotateY(180deg));
-    }
-}
-
-
-.flip-container,
-.front,
-.back {
-    border-radius: 5px;
-    color: $white;
-    width: 180px;
-    height: 220px;
-}
-
-.front,
-.back {
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility:    hidden;
-    -ms-backface-visibility:     hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.front {
-    background-color: $red;
-    z-index: 2;
-    @include transform(rotateY(0));
-
-    label {
-      cursor: pointer;
-      display: inline-block;
-      font-size: 22px;
-      margin-top: 50%;
-      color: white;
-    }
-}
-
-.back {
-    background-color: $blue;
-    text-align: center;
-    vertical-align: middle;
-    display: table-cell;
-    @include transform(rotateY(180deg));
-
-    label {
-        display: block;
-        color: white;
-        width: 100%;
-        font-size: 24px;
-        margin-top: 50%;
-    }
-}
-
 /* Timer */
 
 .timer {
@@ -431,12 +360,34 @@ splash{
     }
 }
 
-/* Github ribbon */
-#github {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: 0;
+.lyrics{
+    margin: 20px;
+    p{
+        font-size: 2em;
+        font-weight: bold;
+        line-height: .7;
+        &.prev,&.next{
+            font-size: 1.2em;
+            font-weight: 400;
+            opacity: .5;
+        }
+    }
+}
+
+footer{
+    .container-footer{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+        line-height: 0;
+
+        p,small{
+            color: $white;
+            text-align: center;
+        }
+    }
+
 }
 
 /* Helpers */

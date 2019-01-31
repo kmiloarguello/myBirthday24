@@ -4,3 +4,4 @@ yarn.lock
 *.log
 vendor/
 .prettierrc
+src/lib

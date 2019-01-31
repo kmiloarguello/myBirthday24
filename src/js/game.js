@@ -1,4 +1,5 @@
 require("../css/index.scss");
+const devMode = process.env.NODE_ENV !== 'production';
 
 let self;
 
@@ -33,6 +34,7 @@ class Buffer {
     }
 
     loaded() {
+        document.getElementsByClassName("container-footer")[0].style.display = "none";
 		document.getElementById("start").innerText = "Start";
 		document.getElementById("start").classList.remove("disabled");
     }
@@ -60,6 +62,7 @@ class Sound {
     play() {
         this.init();
         this.source.start(this.context.currentTime);
+        console.log(this.context.currentTime);
     }
 
     stop() {
@@ -70,6 +73,8 @@ class Sound {
         this.source.stop(this.context.currentTime + 0.5);
     }
 }
+
+let audioBase = devMode ? "http://localhost:9000/audio/daftpunkmix.mp3" : "https://camiloarguello.xyz/audio/daftpunkmix.mp3"
 
 var sounds = [
     "https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/1.wav",
@@ -103,7 +108,7 @@ var sounds = [
     "https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/over.wav",
     "https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/stronger.wav",
     "https://s3-us-west-2.amazonaws.com/s.cdpn.io/327091/work is.wav",
-    "http://localhost:8080/src/audio/daftpunkmix.mp3"
+    audioBase
 ];
 
 class Game {
@@ -121,7 +126,9 @@ class Game {
         this.context = new (window.AudioContext || window.webkitAudioContext)();
         this.buffer = new Buffer(this.context, sounds);
 		this.buffer.loadAll();
-		this.isBaseLoaded = false;
+        this.isBaseLoaded = false;
+        
+        
 
 		this.eventListener();
     }
@@ -181,7 +188,8 @@ class Game {
         this.changeSection("introduction", "gameTwo");
 		window.addEventListener("keydown", this.playSounds);
 
-		document.getElementById("test-play").addEventListener("click",this.takeTest);
+        document.getElementById("test-play").addEventListener("click",this.takeTest);
+
 		document.getElementById("restart").addEventListener("click",this.restartGame);				
     }
     playSounds(e) {
@@ -217,7 +225,15 @@ class Game {
     }
     removeTransition(e) {
         if (e.propertyName !== "transform") return; // skip it if it's not a transform
-        e.target.classList.remove("playing");
+		e.target.classList.remove("playing");
+		
+
+		setTimeout(() => {
+			let keys = document.querySelectorAll(".key");
+			keys.forEach(key => {
+				key.classList.remove("playing");
+			});
+		}, 3000);
 	}
 	takeTest(){
 		// To handle only one click preventing many sounds
